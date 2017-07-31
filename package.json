@@ -1,0 +1,29 @@
+{
+  "name": "koa.js",
+  "version": "1.0.0",
+  "description": "이것은 그냥 내 스터디용",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drake-jin/koa.js.git"
+  },
+  "keywords": [
+    "koa.js",
+    "javascript",
+    "rest",
+    "api"
+  ],
+  "author": "drake-jin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drake-jin/koa.js/issues"
+  },
+  "homepage": "https://github.com/drake-jin/koa.js#readme",
+  "dependencies": {
+    "koa": "^2.3.0"
+  }
+}
