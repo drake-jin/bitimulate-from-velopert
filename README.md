@@ -1,6 +1,9 @@
 # drake-jin/koa.js
 
-velopert의 develoxy 프로젝트를 따라해보자.!!! backend 부분만!!
+velopert의 develoxy 프로젝트를 따라해보자.!!! backend 부분만!!  
+#12 부터 시청하면 됩니당.
+
+
 
 ## Infomation
 
@@ -24,6 +27,14 @@ $ npm install && npm start
 2. npm install -g sequelize-cli
 3. npm install -g eslint
 
+## 작업 내용 .
+
+  1. sequelize init
+
+```
+$ cd {repo}/app
+$ sequelize init   # requirement that cli program     
+```
 
 ## 참고문헌
 

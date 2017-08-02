@@ -1,0 +1,23 @@
+{
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "development": {
+    "username": "root",
+    "password": "choco2323!",
+    "database": "moducampus",
+    "host": "test-cluster.cluster-ro-ci3zskgsgm48.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "choco2323!",
+    "database": "moducampus",
+    "host": "test-cluster.cluster-ro-ci3zskgsgm48.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  }
+}

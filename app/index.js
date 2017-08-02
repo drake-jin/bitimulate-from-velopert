@@ -5,23 +5,15 @@ const Koa = require('koa')
 const Router = require('koa-router')
 const bodyParser = require('koa-bodyparser')
 
-//    DB Connection 관련
-const Sequelize = require('sequelize')
-const dbsource = require('../config/database.json')
-const sequelize = new Sequelize(
-  dbsource[process.env.NODE_ENV].database,
-  dbsource[process.env.NODE_ENV].user,
-  dbsource[process.env.NODE_ENV].password,
-  dbsource[process.env.NODE_ENV].info
-)
 
 // define const variable
 const app = new Koa()
 
-
 // 라우터 셋업
 const api = require('./api')
 
+// 데이터베이스 연결
+const models = require('./models')
 
 
 app.use(bodyParser())
