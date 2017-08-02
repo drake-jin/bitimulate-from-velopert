@@ -1,0 +1,33 @@
+{
+  "production":{
+
+  },
+  "staging":{
+    "database":"moducampus-dev",
+    "user":"root",
+    "password":"choco2323!",
+    "info":{
+      "host": "test-cluster.cluster-ro-ci3zskgsgm48.ap-northeast-2.rds.amazonaws.com",
+      "dialect": "mysql",
+      "pool": {
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+      }
+    }
+  },
+  "development":{
+    "database":"moducampus",
+    "user":"root",
+    "password":"choco2323!",
+    "info":{
+      "host": "test-cluster.cluster-ro-ci3zskgsgm48.ap-northeast-2.rds.amazonaws.com",
+      "dialect": "mysql",
+      "pool": {
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+      }
+    }
+  }
+}
