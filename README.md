@@ -1,5 +1,4 @@
 # drake-jin/koa.js
-
 velopert의 develoxy 프로젝트를 따라해보자.!!! backend 부분만!!  
 #12 부터 시청하면 됩니당.
 
