@@ -1,69 +1,31 @@
-# drake-jin/koa.js
-velopert의 develoxy 프로젝트를 따라해보자.!!! backend 부분만!!  
-#12 부터 시청하면 됩니당.
+# mc-messiah
+velopert의 비트코인 가상거래소 서비스를 따라 만들어보자.
+민준님의 감미로운 목소리를 들으며, 코딩방송을 보는데 똑같이 따라 쳐서 해보고, 같이 고민도 해보자.
+
+프로그래머의 고민이나 습관도 보고 배울 수 있는 좋은 학습방법인거 같다. 하하핳.
 
 
+## 계획
+자정마다 1시간~2시간씩 방송하는데 그거 본방 사수하면서, 퇴근하기전에는 지난 방송 보자.
 
-## Infomation
 
-1. 트렐로 주소
-  - https://trello.com/c/ECR54lkp/141-bac...
+## dir
 
-2. 깃헙 주소
-  - https://github.com/velopert/develoxy.git
+1. crawler 
+    - 비트코인별 화폐율을 볼 수 있는녀석을 테스트로 만들어보자.
 
-## Installation List
+2. client
+    - 리엑트를 사용하여 만든다
 
-1. Install environment Set Up
+3. server 
+    - koa.js 를 이용히여 만든다.
+    - 노드 버전은 7.6.0 코아를 쓰려면 이 버전을 사용해야한다. 
 
-``` sh
-$ nvm install v7.6.0
-$ git clone ${this_repo}
-$ cd ${this_repo}
-$ npm install && npm start
+## Workspace Build
+ - nvm을 애용합시다.
+ - 
 ```
-
-2. npm install -g sequelize-cli
-3. npm install -g eslint
-
-## 작업 내용 .
-
-  1. sequelize init
-
+$ npm install -g create-react-app
+$ cd ${project}
+$ create-react-app client
 ```
-$ cd {repo}/app
-$ sequelize init   # requirement that cli program     
-```
-
-## 참고문헌
-
-1. ES7 문법 조금이라도 공부해보자
->   1. async, await   
->        - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/await
->        - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/async_function
->   2. function*  
->        - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/function*
->   3. yield
->          - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/yield
->   4. yield*
->          - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/yield*
->   5. Promise        |
->   6. FED  함수형 프로그래밍
-
-2. AWS DB 생성.
->   1. Subnet, VPS 사용자라면 Inbound 규칙에 접속 사용자의 규칙을 설정해야한다.
->   2. DB 는 Mysql 을 사용하였고  moducampus 의 데이터베이스를 덤프떠서 개발로 사용.
-
-3. koa.js 관련 reference
->   1. http://koajs.com/#introduction
->   2. https://github.com/alexmingoia/koa-router/tree/master/
->   3. https://github.com/koajs/examples
-
-4. Sequelize 공홈
-
-> 1. 간단 예제
-  http://docs.sequelizejs.com/manual/installation/getting-started
-> 2. 접속 밑 잘 굴러가나 사용
-  http://docs.sequelizejs.com/
-
-3.
