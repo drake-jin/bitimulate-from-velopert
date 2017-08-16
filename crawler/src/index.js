@@ -1,5 +1,6 @@
 var autobahn = require('autobahn');
-var wsuri = "wss://api.poloniex.com";
+//var wsuri = "wss://api.poloniex.com";
+var wsuri = "wss://api2.poloniex.com";
 var connection = new autobahn.Connection({
   url: wsuri,
   realm: "realm1"

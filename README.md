@@ -9,6 +9,22 @@ velopert의 비트코인 가상거래소 서비스를 따라 만들어보자.
 자정마다 1시간~2시간씩 방송하는데 그거 본방 사수하면서, 퇴근하기전에는 지난 방송 보자.
 
 
+## editor setting 
+
+``` js
+// vscode config 
+
+{
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.renderWhitespace": "all",
+
+}
+
+
+```
+
+
 ## dir
 
 1. crawler 

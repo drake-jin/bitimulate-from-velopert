@@ -6,9 +6,11 @@
   "author": "drake-jin",
   "license": "MIT",
   "scripts": {
-    "start:dev": "nodemon --watch src/ src/index.js"
+    "start:dev": "NODE_PATH=src nodemon --watch src/ src/index.js",
+    "crawler:dev": "NODE_PATH=src nodemon --watch src/crawler src/crawler/index.js"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "dotenv": "^4.0.0",
     "eslint": "^4.4.1",
     "global": "^4.3.2",

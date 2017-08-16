@@ -1,14 +1,15 @@
 // set environmemnt use dotenv
 require('dotenv').config()
+const {
+  PORT: port,
+  MONGODB_URI : mongodbURI
+} = process.env
 
 const Koa = require('koa')
 const Router = require('koa-router')
-
-
+const db = require('./db');
+db.connect();
 const app = new Koa()
-const {
-  PORT: port,
-} = process.env
 
 /*
 이게 있으면 전체 라우터의 메시지가 hello world 로 날라감. 주의할것. 
