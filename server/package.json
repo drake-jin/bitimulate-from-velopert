@@ -17,7 +17,8 @@
     "koa": "^2.3.0",
     "koa-router": "^7.2.1",
     "mongoose": "^4.11.6",
-    "mongoose-double": "^0.0.1"
+    "mongoose-double": "^0.0.1",
+    "websocket": "^1.0.24"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^11.3.1",

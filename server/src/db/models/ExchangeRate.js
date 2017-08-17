@@ -33,7 +33,15 @@ const ExchangeRate = new Schema({
   quoteVolume: Types.Double,
   isFrozen: Types.Double,
   high24hr: Types.Double,
-  low24hr: Types.Double
+  low24hr: Types.Double,
+  lastUpdated:{
+    type:Date,
+    default: new Date()
+  }
 })
 
+// only for temporary use
+ExchangeRate.statics.drop = function(){
+  this.remove({}).exec()
+}
 module.exports = mongoose.model('ExchangeRate',ExchangeRate)

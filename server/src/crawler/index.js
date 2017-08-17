@@ -10,6 +10,11 @@ db.connect()
 // 이런 생각은 어떻게해서 도출할 수 있는걸까?
 async function registerInitialExchangeRate(){
   const tickers = await poloniex.getTickers()
+
+  // remove temporary data that tickers infomation(ExchangeRate mongoose collection)
+  await ExchangeRate.drop();
+  console.log("drop exchangeRate Drop Collection")
+
   const keys = Object.keys(tickers)
   const promises = keys.map(
     key => {
@@ -17,9 +22,9 @@ async function registerInitialExchangeRate(){
         const data = Object.assign({name:key}, ticker)
 
         // Crawler ExchangeRate Initializing that insert new data
-        //let exchangeRate = new ExchangeRate(data)  //초기 운영데이터를 구하기 위해 
-        //return exchangeRate.save()
-        return data     // 초기 운영데이터를 구했으면 이 줄의 주석을 해제한다.
+        let exchangeRate = new ExchangeRate(data)  //초기 운영데이터를 구하기 위해 
+        return exchangeRate.save()
+//        return data     // 초기 운영데이터를 구했으면 이 줄의 주석을 해제한다.
       }
   )
   await promises // 이 소스코드가 됨.

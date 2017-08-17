@@ -48,3 +48,5 @@ package-lock.json / yarn-lock 이 둘의 기능은 그 당시 설치했던 노�
             ![poloniex public data](./docs/res/03_poloniex_public.png)
         - BTC_BEP 의 last property가 환율을 나타낸다.
 
+    3. 몽고 4.11.x에서 connect 와 createConnection 함수에 대한 deceprate의 문제.
+        - https://stackoverflow.com/questions/40818016/connect-vs-createconnection 참조
