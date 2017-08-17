@@ -5,9 +5,7 @@ module.exports = {
         "indent": ["error", 2],
         "quotes": ["error", "single"],
         "semi": ["error", "never"],
-        "no-unused-vars":["error","never"]
-
-
+        "no-unused-vars":["error","never"],
         // disable rules from base configurations
         //"no-console": "off",
     },

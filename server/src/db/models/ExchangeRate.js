@@ -1,12 +1,15 @@
 // currency rate for crypto currency exchange
 
 const mongoose = require('mongoose')
+require('mongoose-double')(mongoose);
 const {Schema} = mongoose
+const {Types} = Schema
+
 /*
 reference : lib > ploniex > currencyPairMap.js
 {
     "BTC_BCN": {
-        "id": 7,
+//        "id": 7,
         "last": "0.00000037",
         "lowestAsk": "0.00000038",
         "highestBid": "0.00000037",
@@ -21,17 +24,16 @@ reference : lib > ploniex > currencyPairMap.js
 }
 */
 const ExchangeRate = new Schema({
-  name: String, 
-  last: Number,
-  last: Number,
-  lowestAsk: Number,
-  highestBid: Number,
-  percentChange: Number,
-  baseVolume: Number,
-  quoteVolume: Number,
-  isFrozen: Number,
-  high24hr: Number,
-  low24hr: Number
+  name: String,
+  last: Types.Double,
+  lowestAsk: Types.Double,
+  highestBid: Types.Double,
+  percentChange: Types.Double,
+  baseVolume: Types.Double,
+  quoteVolume: Types.Double,
+  isFrozen: Types.Double,
+  high24hr: Types.Double,
+  low24hr: Types.Double
 })
 
 module.exports = mongoose.model('ExchangeRate',ExchangeRate)
