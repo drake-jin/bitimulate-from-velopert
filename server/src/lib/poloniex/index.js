@@ -3,18 +3,18 @@
 const currencyPairMap = require('./currencyPairMap')
 const axios = require('axios')
 
-module.exports = (function (){
-    return {
-        /**
-         * Retrives pair id using its name
-         * 
-         * @param {string} id 
-         */
-        getCurrencyPairMap(id) {
-            return currencyPairMap[id.toString()]
-        },
-        getTickers(a,then){
-            return axios.get('https://poloniex.com/public?command=returnTicker').then(response => response.data)
-        }
-    }
-})();
+module.exports = (() => {
+  return {
+    /**
+     * Retrives pair id using its name
+     * 
+     * @param {string} id 
+     */
+    getCurrencyPairMap(id) {
+      return currencyPairMap[id.toString()]
+    },
+    getTickers() {
+      return axios.get('https://poloniex.com/public?command=returnTicker').then((response) => { return response.data })
+    },
+  }
+})()

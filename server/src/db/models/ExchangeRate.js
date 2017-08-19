@@ -1,9 +1,10 @@
 // currency rate for crypto currency exchange
 
 const mongoose = require('mongoose')
-require('mongoose-double')(mongoose);
-const {Schema} = mongoose
-const {Types} = Schema
+require('mongoose-double')(mongoose)
+
+const { Schema } = mongoose
+const { Types } = Schema
 
 /*
 reference : lib > ploniex > currencyPairMap.js
@@ -34,14 +35,14 @@ const ExchangeRate = new Schema({
   isFrozen: Types.Double,
   high24hr: Types.Double,
   low24hr: Types.Double,
-  lastUpdated:{
-    type:Date,
-    default: new Date()
-  }
+  lastUpdated: {
+    type: Date,
+    default: new Date(),
+  },
 })
 
 // only for temporary use
-ExchangeRate.statics.drop = function(){
+ExchangeRate.statics.drop = () => {
   this.remove({}).exec()
 }
-module.exports = mongoose.model('ExchangeRate',ExchangeRate)
+module.exports = mongoose.model('ExchangeRate', ExchangeRate)
