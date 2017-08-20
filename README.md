@@ -37,11 +37,3 @@ velopert의 비트코인 가상거래소 서비스를 따라 만들어보자.
     - koa.js 를 이용히여 만든다.
     - 노드 버전은 7.6.0 코아를 쓰려면 이 버전을 사용해야한다. 
 
-## Workspace Build
- - nvm을 애용합시다.
- - 
-```
-$ npm install -g create-react-app
-$ cd ${project}
-$ create-react-app client
-```
