@@ -20,21 +20,24 @@ const messageHandler = {
     const rest = polyfill.objectWithoutProperties(converted, 'name')
 
     try {
-      const updated = await ExchangeRate.updateTicker(name, rest)
-      console.log(updated)
+      // const updated = await ExchangeRate.updateTicker(name, rest)
+      await ExchangeRate.updateTicker(name, rest)
+      console.log(`[Updated],${new Date()} :  ${name}`)
     } catch (e) {
       console.log(e.toString())
     }
   },
 }
 
+socket.handleRefresh = () => {
+  updateEntireRate()
+}
 
 socket.handleMassage = (message) => {
   const parsed = parseJSON(message)
   if (!parsed) {
     return null
   }
-  console.log(parsed)
   const [type, meta, data] = parsed
   if (messageHandler[type]) {
     messageHandler[type](data)
@@ -76,4 +79,28 @@ async function registerInitialExchangeRate() {
   console.log('Crawler ExchangeRate Initializing is Succeed')
 }
 
-registerInitialExchangeRate()
+
+async function updateEntireRate() {
+  const tickers = poloniex.getTickers()
+  const keys = Object.keys(tickers)
+  console.log(keys)
+
+  const promises = keys.map(
+    (key) => {
+      return ExchangeRate.updateTicker(key, tickers[key])
+    },
+  )
+
+  try {
+    Promise.all(promises)
+  } catch (e) {
+    console.log(e.toString())
+    return
+  }
+  console.log('[Update is complete at Exchange Rate]')
+}
+
+
+// registerInitialExchangeRate()
+
+updateEntireRate()

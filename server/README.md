@@ -37,6 +37,11 @@ $npm install 과  $yarn install 의 차이는. 그 당시 설치했던 node 패�
 package-lock.json / yarn-lock 이 둘의 기능은 그 당시 설치했던 노드 패키지를 다운받도록 도와줌.
 
 
+## mongodb Schema Infomation
+
+    - ExchangeRate : 비트코인 화폐 시세
+
+
 ## reference
     1. REST ful API versioning design 
         - 버저닝을 하는 이유는 url이 같으면 같은 주소로의 요청이 캐싱되어버려서 업데이트를 해도 변하지 않을 수 있다.

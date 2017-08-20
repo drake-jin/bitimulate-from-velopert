@@ -41,7 +41,7 @@ const ExchangeRate = new Schema({
   },
 })
 
-const model = mongoose.model('ExchangeRate', ExchangeRate)
+// const model = mongoose.model('ExchangeRate', ExchangeRate) // 이건 안돼! 왜일까?
 
 // only for temporary use
 ExchangeRate.index({ name: 1 }, { name: 'rateTypeIdentifier' }, { unique: true })
@@ -57,6 +57,7 @@ ExchangeRate.statics.updateTicker = (name, data) => {
     { data, lastUpdated: new Date() },
     { upsert: false, new: true }).exec()
 }
+const model = mongoose.model('ExchangeRate', ExchangeRate) // 되는데..?
 
 
 module.exports = model
