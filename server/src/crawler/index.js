@@ -1,4 +1,6 @@
 const poloniex = require('lib/poloniex')
+const { parseJSON, polyfill } = require('lib/common')
+const socket = require('./socket')
 const db = require('db')
 const ExchangeRate = require('db/models/ExchangeRate')
 
@@ -6,6 +8,40 @@ require('dotenv').config()
 
 
 db.connect()
+
+
+socket.connect()
+
+const messageHandler = {
+  1002: async (data) => { // 어떻게 async를 달아줄 생각을 했을까?
+    if (!data) return
+    const converted = poloniex.convertToTickerObject(data)
+    const { name } = converted
+    const rest = polyfill.objectWithoutProperties(converted, 'name')
+
+    try {
+      const updated = await ExchangeRate.updateTicker(name, rest)
+      console.log(updated)
+    } catch (e) {
+      console.log(e.toString())
+    }
+  },
+}
+
+
+socket.handleMassage = (message) => {
+  const parsed = parseJSON(message)
+  if (!parsed) {
+    return null
+  }
+  console.log(parsed)
+  const [type, meta, data] = parsed
+  if (messageHandler[type]) {
+    messageHandler[type](data)
+  }
+  return parsed
+}
+
 
 // 왜  async를 달았을까?
 // 엥 poloniex는 왜 await을 받았지? 
@@ -29,8 +65,14 @@ async function registerInitialExchangeRate() {
       // return data     // 초기 운영데이터를 구했으면 이 줄의 주석을 해제한다.
     },
   )
-  await promises // 이 소스코드가 됨.
-  // await Promise.all(promises) // 이 소스코드는 안됨
+  try {
+    await Promise.all(promises)
+  } catch (e) {
+    console.log(e)
+  }
+  // await promises // 이 소스코드가 됨.
+  // await Promise.all(promises) // 이 소스코드는 안됨  이 두개는 무슨 차이 일까?
+
   console.log('Crawler ExchangeRate Initializing is Succeed')
 }
 

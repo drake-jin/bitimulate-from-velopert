@@ -13,12 +13,13 @@
     "axios": "^0.16.2",
     "dotenv": "^4.0.0",
     "eslint": "^4.4.1",
+    "eslint-plugin-import": "^2.7.0",
     "global": "^4.3.2",
     "koa": "^2.3.0",
     "koa-router": "^7.2.1",
     "mongoose": "^4.11.6",
     "mongoose-double": "^0.0.1",
-    "websocket": "^1.0.24"
+    "ws": "^3.1.0"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^11.3.1",

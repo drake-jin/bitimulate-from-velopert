@@ -47,6 +47,14 @@ package-lock.json / yarn-lock 이 둘의 기능은 그 당시 설치했던 노�
         - 홈페이지를 보니 여기에서 데이터를 가지고 오고 있었다.
             ![poloniex public data](./docs/res/03_poloniex_public.png)
         - BTC_BEP 의 last property가 환율을 나타낸다.
-
     3. 몽고 4.11.x에서 connect 와 createConnection 함수에 대한 deceprate의 문제.
         - https://stackoverflow.com/questions/40818016/connect-vs-createconnection 참조
+
+    4. 응용 프로그램
+       - simple web socket client 확장프로그램 
+
+    5. api2.poloniex.com 소켓 채널 정보
+        1. 웹 소켓 접속하기
+            - https://stackoverflow.com/questions/32154121/how-to-connect-to-poloniex-com-websocket-api-using-a-python-library
+            ![websocket client to poloniex](./docs/res/04_poloniex_websocket_client.png)
+

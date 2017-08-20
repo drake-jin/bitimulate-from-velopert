@@ -15,7 +15,9 @@ module.exports = {
         // disable rules from base configurations
         'import/no-extraneous-dependencies': 'off',
         'import/no-unresolved': 'off',
-        "arrow-body-style": ["error", "always"]
+        'arrow-body-style': ['error', 'always'],
+        'no-use-before-define': 'off',
+        'no-underscore-dangle': 'off',
     },
     'parserOptions': {
         'ecmaVersion': 2017,

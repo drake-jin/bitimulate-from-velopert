@@ -41,8 +41,22 @@ const ExchangeRate = new Schema({
   },
 })
 
+const model = mongoose.model('ExchangeRate', ExchangeRate)
+
 // only for temporary use
+ExchangeRate.index({ name: 1 }, { name: 'rateTypeIdentifier' }, { unique: true })
+
 ExchangeRate.statics.drop = () => {
-  this.remove({}).exec()
+  return model.remove({}).exec()
 }
-module.exports = mongoose.model('ExchangeRate', ExchangeRate)
+
+// 화살표 함수에는 this 가 안들어감
+ExchangeRate.statics.updateTicker = (name, data) => {
+  return model.findOneAndUpdate(
+    { name },
+    { data, lastUpdated: new Date() },
+    { upsert: false, new: true }).exec()
+}
+
+
+module.exports = model
